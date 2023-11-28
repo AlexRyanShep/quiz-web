@@ -9,7 +9,16 @@ frontend:
     build:
       commands:
         - npm run build
-    postBuild:
+  artifacts:
+    baseDirectory: /dist/
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
+test:
+  phases:
+    test:
       commands:
         - npm run test-ci
   artifacts:
