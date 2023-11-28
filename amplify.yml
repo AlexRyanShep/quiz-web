@@ -21,3 +21,10 @@ test:
     test:
       commands:
         - npm run test-ci
+  artifacts:
+    baseDirectory: /dist/
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
